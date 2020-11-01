@@ -1,3 +1,6 @@
+library(Factoextra)
+
+
 ###############################
 # DEBUT PROJET 
 ###############################
@@ -49,6 +52,12 @@ R <- 1/nrow(A)* t(Acr) %*% Acr
 
 # Valeurs propres 
 valprop <- eigen(S)
+
+# Pourcentage d'inertie 
+for (k in 1:nrow(S))
+{
+  cat("lambda ", k, ": ", valprop$values[k]/trS*100, "% \n")
+}
 
 
 
